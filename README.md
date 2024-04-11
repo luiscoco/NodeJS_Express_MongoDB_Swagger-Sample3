@@ -558,4 +558,5 @@ We can create a new item in the database sending a POST request:
 
 Also we can see the elements in the database with ta GET request:
 
+![image](https://github.com/luiscoco/NodeJS_Express_MongoDB_Swagger-Sample3/assets/32194879/ad0e9c6e-0d64-4962-9636-eb10eb6cb344)
 
