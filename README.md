@@ -2,6 +2,8 @@
 
 ## 1. How to run the MongoDB docker container
 
+First of all, do not forget to run **Docker Desktop** before pulling and running the MondoDb Docker container
+
 Download the MongoDB docker container with the command:
 
 ```
