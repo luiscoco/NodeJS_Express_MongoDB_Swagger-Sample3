@@ -191,6 +191,13 @@ This application serves as a basic backend for managing notes, with the added be
 
 The Swagger documentation is accessible by navigating to /api-docs on the running server, providing an interactive interface for trying out the API endpoints
 
+```javascript
+// Start the server
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
+```
+
 ### 4.9. Application Source Code
 
 **app.js**
