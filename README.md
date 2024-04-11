@@ -528,7 +528,7 @@ app.listen(port, () => {
 });
 ```
 
-## 3. How to Run the application
+## 5. How to Run the application
 
 Install the project dependencies derfined in the **package.json** file
 
