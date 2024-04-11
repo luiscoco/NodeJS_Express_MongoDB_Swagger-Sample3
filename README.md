@@ -30,6 +30,8 @@ These are the dependecies required in this project:
 
 - **swagger-ui-express**: This package allows you **to serve auto-generated swagger-ui generated API docs** from express, based on a swagger.json file or the swagger-jsdoc output. It makes your API documentation accessible via a web interface, providing a visual and interactive API documentation. In our application, this package is used to serve the Swagger UI bound to the API documentation generated from your code by swagger-jsdoc. This is what enables you to visit /api-docs in your browser to see the documentation for your API. 
 
+**package.json**
+
 ```json
 {
   "dependencies": {
@@ -42,6 +44,8 @@ These are the dependecies required in this project:
 ```
 
 ## 4. Source code explained
+
+**app.js**
 
 ```javascript
 const express = require("express");
