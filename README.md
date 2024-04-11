@@ -47,6 +47,74 @@ Each of these dependencies plays a crucial role in the functionality of your app
 
 ## 4. Source code explained
 
+This code is a Node.js application using Express, MongoDB, and Swagger for creating a simple REST API to manage notes. Here's a breakdown of its main components and functionalities:
+
+### 4.1. Setting Up Dependencies
+
+The code begins by importing necessary libraries:
+
+**express** for the web server framework
+
+**mongodb** to interact with MongoDB database
+
+**swagger-ui-express** and **swagger-jsdoc** for documenting the API using Swagger
+
+### 4.2. Express App Initialization
+
+An Express application is created, and a port number is defined for the server to listen on
+
+### 4.3. MongoDB Connection
+
+It establishes a connection to MongoDB using the MongoClient from the mongodb package
+
+The database used is "**tutor**", and it operates on a collection named "**notes**"
+
+This connection is asynchronous and uses an immediately invoked function expression (IIFE) to handle the connection logic
+
+We can verify the MondoDb database with **Studio 3T Free for MongoDb**
+
+![image](https://github.com/luiscoco/NodeJS_Express_MongoDB_Swagger-Sample3/assets/32194879/438f8339-e792-4a71-b04c-e931059681ff)
+
+### 4.4. Middleware
+
+The application uses express.json() middleware to parse JSON-formatted request bodies, making it easy to handle JSON data sent in requests.
+
+### 4.5. Swagger Configuration
+
+The Swagger documentation is set up using **swagger-jsdoc** and **swagger-ui-express** 
+
+The configuration specifies the API's information, such as its title, version, and description, and it also defines the schema for a Note object
+
+The API's routes are included in the documentation using a relative path to the file (in this example, "./app.js"), which should be updated to match the actual filename
+
+### 4.6. API Endpoints
+
+The application defines several routes for managing notes:
+
+**GET /notes**: Retrieves all notes from the database. It queries the MongoDB collection and returns the results
+
+**POST /notes**: Allows the creation of a new note by inserting the provided data into the MongoDB collection
+
+**DELETE /notes/:id**: Deletes a note identified by its unique ID from the MongoDB collection
+
+**PUT /notes/:id**: Updates an existing note identified by its unique ID with the provided data
+
+Each of these routes includes Swagger annotations to document the endpoint, describing its purpose, request parameters, and the structure of request and response bodies
+
+### 4.7. Error Handling
+
+The application includes basic error handling for database operations, logging errors to the console and sending error responses to the client.
+
+### 4.8. Starting the Server
+
+Finally, the application listens on the defined port, and upon successful launch, logs a message indicating the server is running
+
+This application serves as a basic backend for managing notes, with the added benefit of having its API documented and testable via Swagger UI
+
+The Swagger documentation is accessible by navigating to /api-docs on the running server, providing an interactive interface for trying out the API endpoints
+
+### 4.9. Application Source Code
+
 **app.js**
 
 ```javascript
