@@ -61,9 +61,20 @@ The code begins by importing necessary libraries:
 
 **swagger-ui-express** and **swagger-jsdoc** for documenting the API using Swagger
 
+```javascript
+const express = require("express");
+const { MongoClient } = require("mongodb");
+const swaggerUi = require("swagger-ui-express");
+const swaggerJSDoc = require("swagger-jsdoc");
+```
+
 ### 4.2. Express App Initialization
 
 An Express application is created, and a port number is defined for the server to listen on
+
+```javascript
+const app = express();
+```
 
 ### 4.3. MongoDB Connection
 
@@ -73,13 +84,37 @@ The database used is "**tutor**", and it operates on a collection named "**notes
 
 This connection is asynchronous and uses an immediately invoked function expression (IIFE) to handle the connection logic
 
+```javascript
+const port = 3000; // Replace this with your desired port number
+
+// MongoDB setup and connection
+let notes;
+
+(async () => {
+  const client = new MongoClient("mongodb://localhost:27017");
+  try {
+    await client.connect();
+    const db = client.db("tutor");
+    notes = db.collection("notes");
+    console.log("MongoDB connected successfully.");
+  } catch (err) {
+    console.error("Error connecting to MongoDB:", err);
+  }
+})();
+```
+
 We can verify the MondoDb database with **Studio 3T Free for MongoDb**
 
 ![image](https://github.com/luiscoco/NodeJS_Express_MongoDB_Swagger-Sample3/assets/32194879/438f8339-e792-4a71-b04c-e931059681ff)
 
 ### 4.4. Middleware
 
-The application uses express.json() middleware to parse JSON-formatted request bodies, making it easy to handle JSON data sent in requests.
+The application uses express.json() middleware to parse JSON-formatted request bodies, making it easy to handle JSON data sent in requests
+
+```javascript
+// Middleware to parse JSON data in the request body
+app.use(express.json());
+```
 
 ### 4.5. Swagger Configuration
 
@@ -88,6 +123,47 @@ The Swagger documentation is set up using **swagger-jsdoc** and **swagger-ui-exp
 The configuration specifies the API's information, such as its title, version, and description, and it also defines the schema for a Note object
 
 The API's routes are included in the documentation using a relative path to the file (in this example, "./app.js"), which should be updated to match the actual filename
+
+```javascript
+// Swagger configuration
+const swaggerOptions = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "Notes API",
+      version: "1.0.0",
+      description: "A simple API to manage notes",
+    },
+    servers: [
+      {
+        url: `http://localhost:${port}`,
+        description: "Development server",
+      },
+    ],
+    components: {
+      schemas: {
+        Note: {
+          type: "object",
+          properties: {
+            title: {
+              type: "string",
+            },
+            content: {
+              type: "string",
+            },
+          },
+        },
+      },
+    },
+  },
+  apis: ["./app.js"], // Replace "app.js" with the actual filename of your main Node.js file
+};
+
+const swaggerSpec = swaggerJSDoc(swaggerOptions);
+
+// Serve Swagger documentation
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+```
 
 ### 4.6. API Endpoints
 
