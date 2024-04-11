@@ -418,4 +418,14 @@ Run the application with the following command:
 node app.js
 ```
 
+After running the application we can navigate to the Swagger OpenAPI docs: http://localhost:3000/api-docs/#/
+
+![image](https://github.com/luiscoco/NodeJS_Express_MongoDB_Swagger-Sample3/assets/32194879/039a10a5-d84c-485b-87b2-2140712bc55a)
+
+We can create a new item in the database sending a POST request:
+
+![image](https://github.com/luiscoco/NodeJS_Express_MongoDB_Swagger-Sample3/assets/32194879/4e21c46b-de82-4d14-969d-6064fa10b819)
+
+Also we can see the elements in the database with ta GET request:
+
 
