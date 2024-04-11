@@ -1,6 +1,6 @@
-# NodeJS_Express_MongoDB_Swagger-Sample3
+# How to create a simple CRUD server with NodeJS + Express + MongoDB (with Swagger OpenAPI docs)
 
-## 1. How to run the MongoDB docker container
+## 1. How to run the MongoDB Docker container
 
 First of all, do not forget to **run Docker Desktop** before pulling and running the MondoDb Docker container
 
