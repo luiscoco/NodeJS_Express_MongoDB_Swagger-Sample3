@@ -16,6 +16,10 @@ and after downloading the MongoDB container then execute it with the command:
 docker run -d -p 27017:27017 --name MongoDB mongo
 ```
 
+![image](https://github.com/luiscoco/NodeJS_Express_MongoDB_Swagger-Sample3/assets/32194879/3059a48b-6ab9-47ee-9f3e-9447749b264f)
+
+![image](https://github.com/luiscoco/NodeJS_Express_MongoDB_Swagger-Sample3/assets/32194879/e5247505-be44-462e-bfe8-3d40d595bf4c)
+
 ## 2. Project folders and files structure
 
 ![image](https://github.com/luiscoco/NodeJS_Express_MongoDB_Swagger-Sample3/assets/32194879/9a4b8dc5-d8c2-4281-ae31-00f9d9c2e348)
