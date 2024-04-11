@@ -14,6 +14,33 @@ and after downloading the MongoDB container then execute it with the command:
 docker run -d -p 27017:27017 --name MongoDB mongo
 ```
 
+## 2. Project folders and files structure
+
+![image](https://github.com/luiscoco/NodeJS_Express_MongoDB_Swagger-Sample3/assets/32194879/91d4f343-43ee-4477-9f52-6b3cbf80057a)
+
+## 3. Project dependencies/libraries
+
+These are the dependecies required in this project: 
+
+- **express**: Express is a fast, unopinionated, minimalist web framework for Node.js. It is designed **for building web applications and APIs**. It is the de facto standard server framework for Node.js. In our application, Express is used to **set up the server**, **define routes**, and **handle HTTP requests and responses**.
+
+- **mongodb**: This is the official MongoDB Node.js driver. It allows you **to connect to your MongoDB database** and perform various database operations like queries, inserts, updates, and deletes directly from your Node.js application. In the given application code, the MongoDB driver is used to connect to a MongoDB database, allowing operations on the database such as adding, retrieving, updating, and deleting notes.
+
+- **swagger-jsdoc**: This package integrates Swagger with JSDoc comments in your code to **automatically generate an OpenAPI specification** (formerly known as Swagger) . This spec can then be used to generate documentation for your API or to drive tooling that consumes OpenAPI. It's used in our project to read **JSDoc-annotated** source code and generate an OpenAPI specification. This specification is what swagger-ui-express uses to render your API documentation.
+
+- **swagger-ui-express**: This package allows you **to serve auto-generated swagger-ui generated API docs** from express, based on a swagger.json file or the swagger-jsdoc output. It makes your API documentation accessible via a web interface, providing a visual and interactive API documentation. In our application, this package is used to serve the Swagger UI bound to the API documentation generated from your code by swagger-jsdoc. This is what enables you to visit /api-docs in your browser to see the documentation for your API. 
+
+```json
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^5.7.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  }
+}
+```
+
 ## 4. Source code explained
 
 ```javascript
@@ -213,3 +240,23 @@ app.listen(port, () => {
 ```
 
 ## 3. How to Run the application
+
+Install the project dependencies derfined in the **package.json** file
+
+```
+npm install
+```
+
+or 
+
+```
+npm i
+```
+
+Run the application with the following command:
+
+```
+node app.js
+```
+
+
