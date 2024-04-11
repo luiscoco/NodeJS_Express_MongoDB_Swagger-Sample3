@@ -16,7 +16,7 @@ docker run -d -p 27017:27017 --name MongoDB mongo
 
 ## 2. Project folders and files structure
 
-![image](https://github.com/luiscoco/NodeJS_Express_MongoDB_Swagger-Sample3/assets/32194879/91d4f343-43ee-4477-9f52-6b3cbf80057a)
+![image](https://github.com/luiscoco/NodeJS_Express_MongoDB_Swagger-Sample3/assets/32194879/9a4b8dc5-d8c2-4281-ae31-00f9d9c2e348)
 
 ## 3. Project dependencies/libraries
 
